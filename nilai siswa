@@ -1,0 +1,30 @@
+public class tugasarray {
+    public static void main(String[] args) {
+        String[][] nilaiSiswa = {
+            {"bujang", "90", "85", "88"},
+            {"sicap", "75", "80", "92"},
+            {"anto", "88", "91", "78"}
+        };
+        // Menampilkan data nilai siswa
+        System.out.println("Daftar Nilai Siswa:");
+        System.out.println("---------------------------------------------");
+        System.out.println("No. | Nama    | Matematika | Fisika | Kimia");
+        System.out.println("---------------------------------------------");
+
+        for (int i = 0; i < nilaiSiswa.length; i++) {
+            System.out.printf("%d   | %-7s | %-10s | %-6s | %-5s\n",
+                i + 1, nilaiSiswa[i][0], nilaiSiswa[i][1], nilaiSiswa[i][2], nilaiSiswa[i][3]);
+        }
+
+        // Hitung rata-rata nilai per siswa
+        System.out.println("\nRata-rata Nilai per Siswa:");
+        for (String[] siswa : nilaiSiswa) {
+            double total = 0;
+            for (int j = 1; j < siswa.length; j++) {
+                total += Integer.parseInt(siswa[j]);
+            }
+            double rataRata = total / (siswa.length - 1);
+            System.out.printf("%s: %.2f\n", siswa[0], rataRata);
+        }
+    }
+}
